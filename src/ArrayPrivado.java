@@ -2,30 +2,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ArrayPrivado {
-	private List <String> nombres;
-	protected int contadorEscritura;
-	protected int contadorLectura;
+	private String[] nombres;
+	private int contadorEscritura= 0;
+	private int contadorLectura = 0;
 	
 	public ArrayPrivado() {
-		nombres = new ArrayList <String>();
-		
+		nombres = new String[5];		
 	}
 	
-	public List <String> getNombres() {
+	public String  getNombres() {
 		contadorLectura ++;
-		return this.nombres;
-		
+		nombres = new String[5];
+		for(int i=0; i < nombres.length; i++) {
+		return  nombres[i];
+		}
+		return null;
 	}
 	
-	public void setNombres(List<String> nombres) {  
+	public void setNombres(String [] nombres) {  
 	    this.nombres = nombres;  
 	    contadorEscritura ++;
 	}  
 	
 	public void addNombre(String nombre) {
-		nombres.add(nombre);
-		contadorEscritura ++;
-	}
+		nombres = new String[5];
+		for(int i=0; i< nombres.length; i++) {
+			nombres[i]= nombre;
+			}
+			contadorEscritura ++;
+		}
+		
 	
 	public int getContadorEscritura() {
 		return contadorEscritura;
