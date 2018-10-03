@@ -5,6 +5,7 @@ public class ArrayPrivado {
 	private String[] nombres;
 	private int contadorEscritura= 0;
 	private int contadorLectura = 0;
+	private int indice= -1;
 	
 	public ArrayPrivado() {
 		nombres = new String[5];		
@@ -12,11 +13,12 @@ public class ArrayPrivado {
 	
 	public String  getNombres() {
 		contadorLectura ++;
-		nombres = new String[5];
-		for(int i=0; i < nombres.length; i++) {
-		return  nombres[i];
-		}
-		return null;
+		String s = " ";
+		for(int i=0; i <= indice; i++) {
+			s = s + nombres[i]+ "  "  ;
+			
+			}
+			return s;
 	}
 	
 	public void setNombres(String [] nombres) {  
@@ -25,10 +27,8 @@ public class ArrayPrivado {
 	}  
 	
 	public void addNombre(String nombre) {
-		nombres = new String[5];
-		for(int i=0; i< nombres.length; i++) {
-			nombres[i]= nombre;
-			}
+			indice ++;
+			nombres[indice]= nombre;
 			contadorEscritura ++;
 		}
 		
